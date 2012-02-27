@@ -25,14 +25,6 @@ def rps_tornament_winner(games)
     end
     
     return rps_game_winner(games)
-    #if is_groups? games
-    #    games.map(
-    #games.each do |g|
-        
-    #end
-    #winners = games.map{|x| rps_game_winner x}
-    #return winners.first if winners.length == 1
-    #return rps_tornament_winner winners.each_slice(2) {|a| p a}
 end
 
 def is_group?(games)
