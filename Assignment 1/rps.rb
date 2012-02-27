@@ -18,6 +18,13 @@ def rps_game_winner(game)
 end
 
 def rps_tornament_winner(games)
+    if is_group? games
+        first_winner = rps_tornament_winner games[0]
+        second_winner = rps_tornament_winner games[1]
+        return rps_game_winner([first_winner, second_winner])
+    end
+    
+    return rps_game_winner(games)
     #if is_groups? games
     #    games.map(
     #games.each do |g|
@@ -26,4 +33,8 @@ def rps_tornament_winner(games)
     #winners = games.map{|x| rps_game_winner x}
     #return winners.first if winners.length == 1
     #return rps_tornament_winner winners.each_slice(2) {|a| p a}
+end
+
+def is_group?(games)
+    return games.flatten.length > 4
 end
