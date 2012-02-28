@@ -17,10 +17,10 @@ def rps_game_winner(game)
     end
 end
 
-def rps_tornament_winner(games)
+def rps_tournament_winner(games)
     if is_group? games
-        first_winner = rps_tornament_winner games[0]
-        second_winner = rps_tornament_winner games[1]
+        first_winner = rps_tournament_winner games[0]
+        second_winner = rps_tournament_winner games[1]
         return rps_game_winner([first_winner, second_winner])
     end
     

@@ -27,7 +27,11 @@ describe "rps_game_winner" do
     end
 end
 
-describe "rps_tornament_winner" do
+describe "rps_tournament_winner" do
+    it "should still be able to handle the case where a tournament is just one game" do
+        rps_tournament_winner([["Player1", "P"], ["Player2", "R"]]).should eql(["Player1", "P"])
+    end
+    
     it "should do tornament" do
         tornament = [
         [
@@ -40,7 +44,7 @@ describe "rps_tornament_winner" do
         ]
         ]
         
-        rps_tornament_winner(tornament).should eql(["Richard", "R"])
+        rps_tournament_winner(tornament).should eql(["Richard", "R"])
     end
     
     it "should process even more deep nesting" do
@@ -67,6 +71,6 @@ describe "rps_tornament_winner" do
         ]
         ]
         
-        rps_tornament_winner(tornament).should eql(["Player3", "R"])
+        rps_tournament_winner(tornament).should eql(["Player3", "R"])
     end
 end
